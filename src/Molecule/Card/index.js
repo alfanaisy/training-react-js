@@ -1,22 +1,13 @@
-import MaleAvatar from '../../vendor/male-avatar.png';
-import FemaleAvatar from '../../vendor/female-avatar.png';
+import Image from '../../Atom/Image';
+import UserProfile from '../../Atom/UserProfile';
 
 import './style.css';
 
-const Card = ({ gender, name, role }) => {
-  let avatar;
-  if (gender) {
-    avatar = FemaleAvatar;
-  } else {
-    avatar = MaleAvatar;
-  }
+const Card = ({ gender, name, city, birthdate }) => {
   return (
     <div className="card">
-      <img src={avatar} alt="avatar" />
-      <div className="card-container">
-        <h4>{name}</h4>
-        <p>{role}</p>
-      </div>
+      <Image gender={gender} />
+      <UserProfile name={name} city={city} birthdate={birthdate} />
     </div>
   );
 };
